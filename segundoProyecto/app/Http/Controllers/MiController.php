@@ -38,6 +38,16 @@ class MiController extends Controller
         return view("mostrar");
     }
 
+    public function contactar()
+    {
+        return view("contacto");
+    }
+
+    public function galeria()
+    {
+        return view("galeria");
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

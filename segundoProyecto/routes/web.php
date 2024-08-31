@@ -11,3 +11,5 @@ Route::get("/", [MiController::class, 'index']);
 Route::get("/crear", [MiController::class, 'create']);
 Route::get("/articulos", [MiController::class, 'store']);
 Route::get("/mostrar", [MiController::class, 'show']);
+Route::get("/contacto", [MiController::class, 'contactar']);
+Route::get("/galeria", [MiController::class, 'galeria']);
