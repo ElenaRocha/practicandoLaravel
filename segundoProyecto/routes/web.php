@@ -18,13 +18,14 @@ Route::get("/insertar", function () {
 });
 Route::get("/leer", function () {
     $resultados = DB::select("SELECT * FROM articulos WHERE ID=?", [1]);
-    foreach($resultados as $articulos){
+    foreach($resultados as $articulo){
         return $articulo->nombre_articulo;
     }
 });
+
 Route::get("/actualizar", function () {
     DB::update("UPDATE articulos SET SECCION='DECORACION' WHERE ID=?", [2]);
 });
 Route::get("/borrar", function () {
-    DB::update("DELETE FROM articulos WHERE ID=?", [2]);
+    DB::delete("DELETE FROM articulos WHERE ID=?", [2]);
 });
