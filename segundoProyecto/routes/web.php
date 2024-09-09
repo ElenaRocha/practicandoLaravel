@@ -34,8 +34,10 @@ Route::get("/borrar", function () {
 */
 
 Route::get("/leer", function () {
-    $articulos = Articulo::all();
-    foreach($articulos as $articulo){
-        echo "Nombre: " . $articulo->nombre_articulo . "Precio: " . $articulo->precio . "<br>";
-    }
+    // $articulos = Articulo::all();
+    // foreach($articulos as $articulo){
+    //     echo "Nombre: " . $articulo->nombre_articulo . "Precio: " . $articulo->precio . "<br>";
+    // }
+    $articulos = Articulo::where("pais_origen", "China")->orderBy("nombre_articulo")->take(5)->get();
+    return $articulos;
 });
