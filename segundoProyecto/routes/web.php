@@ -41,3 +41,23 @@ Route::get("/leer", function () {
     $articulos = Articulo::where("pais_origen", "China")->orderBy("nombre_articulo")->take(5)->get();
     return $articulos;
 });
+Route::get("/insertar", function () {
+    $articulos = new Articulo;
+    $articulos->nombre_articulo="Pantalones";
+    $articulos->precio=60;
+    $articulos->pais_origen="España";
+    $articulos->observaciones="Lavados a la piedra";
+    $articulos->seccion="Confección";
+
+    $articulos->save();
+});
+Route::get("/actualizar", function () {
+    $articulos = Articulo::find(7);
+    $articulos->nombre_articulo="Pantalones";
+    $articulos->precio=90;
+    $articulos->pais_origen="España";
+    $articulos->observaciones="Lavados a la piedra";
+    $articulos->seccion="Confección";
+
+    $articulos->save();
+});
