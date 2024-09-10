@@ -52,12 +52,21 @@ Route::get("/insertar", function () {
     $articulos->save();
 });
 Route::get("/actualizar", function () {
-    $articulos = Articulo::find(7);
-    $articulos->nombre_articulo="Pantalones";
-    $articulos->precio=90;
-    $articulos->pais_origen="España";
-    $articulos->observaciones="Lavados a la piedra";
-    $articulos->seccion="Confección";
+    // $articulos = Articulo::find(7);
+    // $articulos->nombre_articulo="Pantalones";
+    // $articulos->precio=90;
+    // $articulos->pais_origen="España";
+    // $articulos->observaciones="Lavados a la piedra";
+    // $articulos->seccion="Confección";
 
-    $articulos->save();
+    // $articulos->save();
+    Articulo::where("seccion", "Cerámica")->where("pais_origen", "España")->update(["precio"=>50]);
+});
+Route::get("/borrar", function () {
+    // $articulo=Articulo::fund(2);
+    // $articulo->delete();
+    Articulo::where("seccion", "Cafetería")->delete();
+});
+Route::get("/insertarVarios", function () {
+    Articulo::create(["nombre_articulo"=>"Impresora", "precio"=>30, "pais_origen"=>"Francia", "observaciones"=>"por inyección", "seccion"=>"Informática"]);
 });

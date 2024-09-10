@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Articulo extends Model
 {
     use HasFactory;
-    protected $table="misArticulos";
+    // protected $table="misArticulos";
+    protected $fillable = [
+        "nombre_articulo",
+        "precio",
+        "pais_origen",
+        "observaciones",
+        "seccion"
+    ];
 }
