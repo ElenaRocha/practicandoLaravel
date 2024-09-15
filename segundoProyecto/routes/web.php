@@ -72,3 +72,6 @@ Route::get("/insertarVarios", function () {
 Route::get("/actualizarVarios", function () {
     Articulo::where("seccion", "Cerámica")->where("pais_origen", "España")->update(["precio"=>50]);
 });
+Route::get("/softDeletes", function () {
+    Articulo::find(4)->delete();
+})
