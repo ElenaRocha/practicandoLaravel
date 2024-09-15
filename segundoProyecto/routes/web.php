@@ -39,9 +39,12 @@ Route::get("/leer", function () {
     //     echo "Nombre: " . $articulo->nombre_articulo . "Precio: " . $articulo->precio . "<br>";
     // }
     $articulos = Articulo::where("pais_origen", "China")->orderBy("nombre_articulo")->take(5)->get();
+    // $articulos = Articulo::where("id", 4)->get();
+    // $articulos = Articulo::withTrashed()->where("id", 4)->get();
+    $articulos = Articulo::onlyTrashed()->where("id", 4)->get();
     return $articulos;
 });
-Route::get("/insertar", function () {
+Route::post("/insertar", function () {
     $articulos = new Articulo;
     $articulos->nombre_articulo="Pantalones";
     $articulos->precio=60;
@@ -51,7 +54,7 @@ Route::get("/insertar", function () {
 
     $articulos->save();
 });
-Route::get("/actualizar", function () {
+Route::put("/actualizar", function () {
     $articulos = Articulo::find(7);
     $articulos->nombre_articulo="Pantalones";
     $articulos->precio=90;
@@ -61,17 +64,23 @@ Route::get("/actualizar", function () {
 
     $articulos->save();
 });
-Route::get("/borrar", function () {
-    // $articulo=Articulo::fund(2);
-    // $articulo->delete();
+Route::delete("/borrar", function () {
+    // $articulo = Articulo::find(2);
+    // $articulo->delete();    
     Articulo::where("seccion", "Cafetería")->delete();
 });
-Route::get("/insertarVarios", function () {
+Route::post("/insertarVarios", function () {
     Articulo::create(["nombre_articulo"=>"Impresora", "precio"=>30, "pais_origen"=>"Francia", "observaciones"=>"por inyección", "seccion"=>"Informática"]);
 });
-Route::get("/actualizarVarios", function () {
+Route::put("/actualizarVarios", function () {
     Articulo::where("seccion", "Cerámica")->where("pais_origen", "España")->update(["precio"=>50]);
 });
-Route::get("/softDeletes", function () {
+Route::delete("/softDeletes", function () {
     Articulo::find(4)->delete();
-})
+});
+Route::post("/restaurarPapelera", function () {
+    Articulo::onlyTrashed()->restore();
+});
+Route::delete("/hardDeletes", function () {
+    Articulo::onlyTrashed()->forceDelete();
+});
