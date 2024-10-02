@@ -84,3 +84,8 @@ Route::post("/restaurarPapelera", function () {
 Route::delete("/hardDeletes", function () {
     Articulo::onlyTrashed()->forceDelete();
 });
+
+
+Route::get("/cliente/1/articulo", function(){
+    return Cliente::find(1)->articulo;
+});
