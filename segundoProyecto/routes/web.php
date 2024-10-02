@@ -100,3 +100,9 @@ Route::get("/articulos/{id}", function($id){
         echo $articulo->nombre_articulo . "<br/>";
     }
 });
+Route::get("/cliente/{id}/perfil", function($id){
+    $cliente = Cliente::find($id)->perfils()->orderBy("name")->get();
+    foreach($clientes->perfils as $perfil){
+        return $perfil->nombre;
+    }
+});

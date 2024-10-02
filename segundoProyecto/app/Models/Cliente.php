@@ -16,4 +16,8 @@ class Cliente extends Model
     public function articulos(){
         return $this->hasMany("App\Articulo");
     }
+
+    public function perfils(){
+        return $this->belongsToMany("App\Perfil");
+    }
 }
