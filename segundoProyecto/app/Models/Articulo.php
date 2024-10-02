@@ -22,4 +22,8 @@ class Articulo extends Model
         "observaciones",
         "seccion"
     ];
+
+    public function cliente(){
+        return $this->belongsTo("App\Cliente");
+    }
 }
