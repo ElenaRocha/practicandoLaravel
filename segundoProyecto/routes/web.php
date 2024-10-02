@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MiController;
+use App\Articulo;
+use App\Cliente;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -91,4 +93,10 @@ Route::get("/cliente/{id}/articulo", function($id){
 });
 Route::get("/articulo/{id}/cliente", function($id){
     return Articulo::find($id)->cliente->Nonmbre;
+});
+Route::get("/articulos/{id}", function($id){
+    $articulos = Cliente::find($id)->articulo;
+    foreach($articulos as $articulo){
+        echo $articulo->nombre_articulo . "<br/>";
+    }
 });
