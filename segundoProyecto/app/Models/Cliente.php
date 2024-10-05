@@ -9,6 +9,8 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["Nombre", "Apellidos"];
+
     public function articulo(){
         return $this->hasOne("App\Articulo");
     }
