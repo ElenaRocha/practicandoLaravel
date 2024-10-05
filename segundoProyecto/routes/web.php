@@ -106,3 +106,16 @@ Route::get("/cliente/{id}/perfil", function($id){
         return $perfil->nombre;
     }
 });
+
+Route::get("/calificaciones/cliente/({id}", function($id){
+    $cliente = Cliente::find($id);
+    foreach($cliente->calificaciones as $calificacion){
+        return $calificacion;
+    }
+});
+Route::get("/calificaciones/articulo/({id}", function($id){
+    $articulo = Articulo::find($id);
+    foreach($articulo->calificaciones as $calificacion){
+        return $calificacion;
+    }
+});
