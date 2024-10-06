@@ -10,3 +10,6 @@ Route::get('/', function () {
 // Route::get('/inicio', 'ProductosController@index');
 Route::get('/inicio', [ProductosController::class, 'index']);
 Route::get('/crear', [ProductosController::class, 'create']);
+Route::get('/insertar', [ProductosController::class, 'store']);
+Route::get('/actualizar', [ProductosController::class, 'update']);
+Route::get('/borrar', [ProductosController::class, 'destroy']);

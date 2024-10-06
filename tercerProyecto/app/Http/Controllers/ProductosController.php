@@ -27,7 +27,7 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view("productos.insert");
     }
 
     /**
@@ -51,7 +51,7 @@ class ProductosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return view("productos.update");
     }
 
     /**
@@ -59,6 +59,6 @@ class ProductosController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return view("productos.delete");
     }
 }
