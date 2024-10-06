@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 // Route::get('/inicio', 'ProductosController@index');
 Route::get('/inicio', [ProductosController::class, 'index']);
+Route::get('/crear', [ProductosController::class, 'create']);
