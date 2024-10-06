@@ -11,7 +11,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+        return "Estás en la página de inicio";
     }
 
     /**
