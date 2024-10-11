@@ -8,6 +8,7 @@
 <body>
     <div class="cabecera">
         @yield("cabecera")
+        <img src="/images/logo.png" alt="icono de tienda" class="imagenCabecera">
     </div>
     <div class="contenido">
         @yield("contenido")
