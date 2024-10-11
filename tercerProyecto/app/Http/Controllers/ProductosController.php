@@ -32,7 +32,13 @@ class ProductosController extends Controller
     {
         // return view("productos.insert");
         $producto = new Producto;
+        
         $producto->nombreArticulo = $request->nombreArticulo;
+        $producto->seccion = $request->seccion;
+        $producto->precio = $request->precio;
+        $producto->fecha = $request->fecha;
+        $producto->paisOrigen = $request->paisOrigen;
+
         $producto->save();
     }
 
