@@ -24,6 +24,14 @@
         .contenido form input {
             margin: 10px;
         }
+        .pie {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1em;
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +44,7 @@
     </div>
     <div class="pie">
         @yield("pie")
+        ElenaRocha.S.L 2024
     </div>
 </body>
 </html>
