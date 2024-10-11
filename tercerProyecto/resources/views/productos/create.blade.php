@@ -1,6 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
+INSERTAR REGISTROS
 @endsection
 
 @section("contenido")

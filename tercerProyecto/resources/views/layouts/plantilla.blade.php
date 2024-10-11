@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plantilla para formulario</title>
+    <style>
+        .imagenCabecera {
+            float: right;
+            padding-right: 150px;
+            width: 50px;
+        }
+        .cabecera {
+            text-align: center;
+            font-size: x-large;
+            font-family: Tahoma, Geneva, sans-serif;
+            margin: 50px 0;
+            color: DodgerBlue;
+        }
+    </style>
 </head>
 <body>
     <div class="cabecera">
