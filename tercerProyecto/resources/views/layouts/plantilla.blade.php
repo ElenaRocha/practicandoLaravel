@@ -17,6 +17,13 @@
             margin: 50px 0;
             color: DodgerBlue;
         }
+        .contenido form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .contenido form input {
+            margin: 10px;
+        }
     </style>
 </head>
 <body>

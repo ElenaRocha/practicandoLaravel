@@ -6,9 +6,44 @@ INSERTAR REGISTROS
 
 @section("contenido")
     <form method="post" action="/productos">
-        <input type="text" name="nombreArticulo">
-        {{ csrf_field() }}
-        <input type="submit" name="enviar" value="Enviar">
+        <table>
+            <tr>
+                <td>Nombre: </td>
+                <td>
+                    <input type="text" name="nombreArticulo">
+                    {{ csrf_field() }}
+                </td>
+            </tr>
+            <tr>
+                <td>Sección: </td>
+                <td>
+                    <input type="text" name="seccion">
+                </td>
+            </tr>
+            <tr>
+                <td>Precio: </td>
+                <td>
+                    <input type="text" name="precio">
+                </td>
+            </tr>
+            <tr>
+                <td>Fecha: </td>
+                <td>
+                    <input type="text" name="fecha">
+                </td>
+            </tr>
+            <tr>
+                <td>País de origen: </td>
+                <td>
+                    <input type="text" name="paisOrigen">
+                </td>
+            </tr>
+            <tr>
+                <td colspan = "2" align = "center">
+                    <input type="submit" name="enviar" value="Enviar">
+                </td>
+            </tr>
+        </table>
     </form>
 @endsection
 
