@@ -14,7 +14,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return "Estás en la página de inicio";
+        // return "Estás en la página de inicio";
+        $productos = Producto::all();
+        return view ("productos.index", compact("productos"));
     }
 
     /**
