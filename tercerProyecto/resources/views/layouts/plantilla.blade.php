@@ -17,8 +17,8 @@
             margin: 50px 0;
             color: DodgerBlue;
         }
-        .contenido form {
-            width: 300px;
+        .contenido form, table {
+            width: 500px;
             margin: 0 auto;
         }
         .contenido form input {
