@@ -41,13 +41,18 @@ EDITAR PRODUCTO
             </tr>
             <tr>
                 <td>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" value="Actualizar">
                 </td>
                 <td>
-                    <input type="reset" name="borrar" value="Borrar">
+                    <input type="reset" name="borrar" value="Borrar campos">
                 </td>
             </tr>
         </table>
+    </form>
+    <form method="post" action="/productos/{{$producto->id}}">
+        {{ csrf_field() }}
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Eliminar registro">
     </form>
 @endsection
 
