@@ -1,7 +1,7 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-LEER REGISTROS
+MOSTRAR REGISTRO
 @endsection
 
 @section("contenido")
