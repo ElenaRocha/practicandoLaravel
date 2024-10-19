@@ -5,13 +5,14 @@ EDITAR PRODUCTO
 @endsection
 
 @section("contenido")
-    <form method="post" action="/productos">
+    <form method="post" action="/productos/{{$producto->id}}">
         <table>
             <tr>
                 <td>Nombre: </td>
                 <td>
                     <input type="text" name="nombreArticulo" value="{{$producto->nombreArticulo}}">
                     {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="PUT">
                 </td>
             </tr>
             <tr>
