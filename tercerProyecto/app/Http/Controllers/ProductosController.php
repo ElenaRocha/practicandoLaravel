@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 // use App\Producto;
 use App\Models\Producto;
 
 class ProductosController extends Controller
 {
+    use ValidatesRequests;
+
     /**
      * Display a listing of the resource.
      */
@@ -16,7 +19,7 @@ class ProductosController extends Controller
     {
         // return "Estás en la página de inicio";
         $productos = Producto::all();
-        return view ("productos.index", compact("productos"));
+        return view("productos.index", compact("productos"));
     }
 
     /**
@@ -33,8 +36,11 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
         // return view("productos.insert");
+
+        $this->validate($request, ['nombreArticulo' => 'required', 'seccion' => 'required']);
+
         $producto = new Producto;
-        
+
         $producto->nombreArticulo = $request->nombreArticulo;
         $producto->seccion = $request->seccion;
         $producto->precio = $request->precio;
